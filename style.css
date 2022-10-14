@@ -1,0 +1,45 @@
+:root {
+    --bg-color: rgb(10, 0, 23);
+}
+
+@keyframes background-pan {
+    from {
+        background-position: 0% center;
+    }
+
+    to {
+        background-position: -200% center;
+    }
+}
+
+body {
+    background-color: var(--bg-color);
+    overflow: hidden;
+    margin: 0px;
+
+    display: grid;
+    height: 100vh;
+    place-items: center;
+}
+
+h1 {
+    color: white;
+    font-family: "Roboto";
+    font-size: clamp(2em, 2vw, 4em);
+    font-weight: 400;
+    margin: 0px;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 > span.magic > span.magic-text {
+    animation: background-pan 2s linear infinite;
+
+    background: linear-gradient(to right, purple, violet, hotpink, purple);
+    background-size: 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    white-space: nowrap;
+}
